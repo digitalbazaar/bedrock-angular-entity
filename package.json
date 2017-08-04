@@ -1,0 +1,21 @@
+{
+  "name": "bedrock-angular-entity",
+  "version": "0.0.1-0",
+  "description": "A Bedrock AngularJS module that is used to display and edit entities.",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "~1.6.4",
+    "lodash": "^4.16.4"
+  },
+  "bedrock": {
+    "browserDependencies": "all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-angular-entity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/bedrock-angular-entity/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/bedrock-angular-entity#readme"
+}
