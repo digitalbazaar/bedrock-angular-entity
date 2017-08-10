@@ -38,6 +38,21 @@ function Ctrl() {
         minValue: 0,
         maxValue: 140
       }
+    }, {
+      label: 'Pet',
+      modelProperty: 'desiredPet',
+      dataType: 'ShortString',
+      description: 'What kind of pet do you want?',
+      option: [{
+        label: 'Cat',
+        value: 'Feline'
+      }, {
+        label: 'Dog',
+        value: 'Canine'
+      }, {
+        label: 'Dragon',
+        value: 'Rawr'
+      }]
     }]
   };
   self.template = 'https://example.org/template.html',

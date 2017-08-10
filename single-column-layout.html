@@ -2,7 +2,7 @@
   <div ng-repeat="attribute in $ctrl.schema.attribute">
 
     <!-- ShortString -->
-    <br-input ng-if="attribute.dataType === 'ShortString'"
+    <br-input ng-if="attribute.dataType === 'ShortString' && !attribute.option"
       br-model="$ctrl.entity[attribute.modelProperty]"
       br-options="{
         name: attribute.modelProperty,
@@ -60,6 +60,31 @@ characters.
         </div>
       </br-input-validation-errors>
     </br-input>
+
+    <!-- Select for ShortString -->
+    <br-select ng-if="attribute.dataType === 'ShortString' && attribute.option"
+      br-model="$ctrl.entity[attribute.modelProperty]"
+      br-items="attribute.option"
+      br-display-item="item.label"
+      br-options="{
+        name: attribute.modelProperty,
+        label: attribute.label,
+        key: 'value',
+        theme: 'material',
+        required: attribute.validation.required,
+        autocomplete: false
+      }">
+      <br-select-help>
+{{attribute.description}}
+      </br-select-help>
+      <br-select-validation-errors>
+        <div ng-messages="$ctrl.form[attribute.modelProperty].$error">
+          <div ng-message="required">
+{{attribute.label}} is required.
+          </div>
+        </div>
+      </br-select-validation-errors>
+    </br-select>
 
   </div>
 </form>
