@@ -8,19 +8,33 @@
     "postinstall": "node ./index.js compile-less"
   },
   "dependencies": {
+    "angular": "~1.6.5",
+    "angular-animate": "~1.6.5",
+    "angular-aria": "~1.6.5",
+    "angular-messages": "~1.6.5",
     "bedrock": "^1.4.1",
     "bedrock-angular": "^3.0.0",
+    "bedrock-angular-form": "^3.0.0",
+    "bedrock-angular-material": "^1.0.0",
     "bedrock-docs": "^2.1.0",
     "bedrock-express": "^2.0.6",
     "bedrock-server": "^2.2.0",
     "bedrock-validation": "^2.2.1",
     "bedrock-views": "^5.1.0",
-    "bedrock-webpack": "^1.0.2"
+    "bedrock-webpack": "^1.0.2",
+    "ng-error": "^1.0.2"
   },
   "bedrock": {
     "browserDependencies": [
+      "angular",
+      "angular-animate",
+      "angular-aria",
+      "angular-messages",
       "bedrock-angular",
-      "bedrock-angular-entity"
+      "bedrock-angular-entity",
+      "bedrock-angular-form",
+      "bedrock-angular-material",
+      "ng-error"
     ]
   },
   "engines": {

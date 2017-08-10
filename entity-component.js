@@ -7,7 +7,7 @@ export default {
   bindings: {
     schema: '<brEntitySchema',
     template: '<?brEntityTemplate',
-    onChange: '<brOnChange'
+    onChange: '&brOnChange'
   },
   controller: Ctrl,
   templateUrl: 'bedrock-angular-entity/entity-component.html'
@@ -24,6 +24,4 @@ function Ctrl() {
       self.template = 'bedrock-angular-entity/single-column-layout.html';
     }
   };
-
-  console.log("EC GOT BINDINGS", self);
 }

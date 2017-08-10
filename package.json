@@ -3,13 +3,25 @@
   "version": "0.1.0",
   "main": "index.js",
   "dependencies": {
+    "angular": "~1.6.5",
+    "angular-animate": "~1.6.5",
+    "angular-aria": "~1.6.5",
+    "angular-messages": "~1.6.5",
     "bedrock-angular": "^3.0.0",
-    "bedrock-angular-form": "^3.0.0"
+    "bedrock-angular-form": "^3.0.0",
+    "bedrock-angular-material": "^1.0.0",
+    "ng-error": "^1.0.2"
   },
   "bedrock": {
     "browserDependencies": [
+      "angular",
+      "angular-animate",
+      "angular-aria",
+      "angular-messages",
       "bedrock-angular",
-      "bedrock-angular-form"
+      "bedrock-angular-form",
+      "bedrock-angular-material",
+      "ng-error"
     ]
   },
   "engines": {

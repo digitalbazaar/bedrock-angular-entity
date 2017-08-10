@@ -34,7 +34,7 @@ function Ctrl() {
       dataType: 'Number',  // or 'Decimal' or 'Integer'
       description: 'The age of the entity.',
       validation: {
-        required: true,
+        required: false,
         minValue: 0,
         maxValue: 140
       }

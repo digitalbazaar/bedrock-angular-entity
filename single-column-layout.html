@@ -1,6 +1,6 @@
 <form name="$ctrl.form" class="br-flex-vertical-children br-flex-stretch-width">
   <div ng-repeat="attribute in $ctrl.schema.attribute">
-<!--pre>{{attribute|json}}</pre-->
+
     <!-- ShortString -->
     <br-input ng-if="attribute.dataType === 'ShortString'"
       br-model="$ctrl.entity[attribute.modelProperty]"
@@ -10,18 +10,28 @@
         showValidation: !!attribute.validation,
         type: 'text',
         theme: 'material'
-      }" br-input-ng-disabled="$ctrl.loading" br-input-autocomplete="off"
-      ng-attr-minlength="attribute.validation.minLength"
-      ng-attr-maxlength="attribute.validation.maxLength"
-      ng-attr-required="attribute.validation.required">
+      }"
+      br-input-ng-disabled="$ctrl.loading"
+      br-input-autocomplete="off"
+      br-input-ng-minlength="attribute.validation.minLength"
+      br-input-ng-maxlength="attribute.validation.maxLength"
+      br-input-ng-required="attribute.validation.required">
       <br-input-help>
-        {{attribute.description}}
+{{attribute.description}}
       </br-input-help>
       <br-input-validation-errors>
         <div ng-messages="$ctrl.form[attribute.modelProperty].$error">
-          <div ng-message="required">{{attribute.label}} is required.</div>
-          <div ng-message="minlength">{{attribute.label}} is required to be at least {{attribute.validation.minLength}} characters.</div>
-          <div ng-message="maxlength">{{attribute.label}} must not be longer than {{attribute.validation.maxLength}} characters.</div>
+          <div ng-message="required">
+{{attribute.label}} is required.
+          </div>
+          <div ng-message="minlength">
+{{attribute.label}} is required to be at least
+{{attribute.validation.minLength}} characters.
+          </div>
+          <div ng-message="maxlength">
+{{attribute.label}} must not be longer than {{attribute.validation.maxLength}}
+characters.
+          </div>
         </div>
       </br-input-validation-errors>
     </br-input>
@@ -36,17 +46,17 @@
         type: 'number',
         theme: 'material'
       }" br-input-ng-disabled="$ctrl.loading" br-input-autocomplete="off"
-      ng-attr-min="attribute.validation.min"
-      ng-attr-max="attribute.validation.max"
-      ng-attr-required="attribute.validation.required">
+      br-input-ng-min="attribute.validation.minValue"
+      br-input-ng-max="attribute.validation.maxValue"
+      br-input-ng-required="attribute.validation.required">
       <br-input-help>
         {{attribute.description}}
       </br-input-help>
       <br-input-validation-errors>
         <div ng-messages="$ctrl.form[attribute.modelProperty].$error">
           <div ng-message="required">{{attribute.label}} is required.</div>
-          <div ng-message="minlength">{{attribute.label}} is required to be at least {{attribute.validation.minLength}} characters.</div>
-          <div ng-message="maxlength">{{attribute.label}} must not be longer than {{attribute.validation.maxLength}} characters.</div>
+          <div ng-message="min">{{attribute.label}} is required to be at least {{attribute.validation.minValue}}.</div>
+          <div ng-message="max">{{attribute.label}} must not be more than {{attribute.validation.maxValue}}.</div>
         </div>
       </br-input-validation-errors>
     </br-input>
