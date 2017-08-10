@@ -14,7 +14,7 @@ export default {
 };
 
 /* @ngInject */
-function Ctrl() {
+function Ctrl($scope) {
   const self = this;
 
   self.$onInit = () => {
@@ -23,5 +23,16 @@ function Ctrl() {
     if(!self.template) {
       self.template = 'bedrock-angular-entity/single-column-layout.html';
     }
+
+    // watch entity and fire onChange when it updates w/ a valid change
+    $scope.$watch(function() {
+      return self.entity;
+    }, function(entity) {
+      if(entity === undefined) {
+        return;
+      }
+
+      self.onChange({entity: entity});
+    }, true);
   };
 }

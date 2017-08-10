@@ -58,6 +58,6 @@ function Ctrl() {
   self.template = 'https://example.org/template.html',
 
   self.onChange = entity => {
-    console.log("ENTITY", entity);
+    console.log("Entity change detected:", entity);
   };
 }
