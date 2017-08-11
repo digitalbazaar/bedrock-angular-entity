@@ -32,6 +32,10 @@ function Ctrl($scope) {
         return;
       }
 
+      // clean undefined values before returning
+      Object.keys(entity).forEach((key) =>
+        (entity[key] == undefined) && delete entity[key]);
+
       self.onChange({entity: entity});
     }, true);
   };
