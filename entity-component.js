@@ -7,6 +7,7 @@ export default {
   bindings: {
     schema: '<brEntitySchema',
     template: '<?brEntityTemplate',
+    valid: '=brValid',
     onChange: '&brOnChange'
   },
   controller: Ctrl,
@@ -35,7 +36,7 @@ function Ctrl($scope) {
       // clean undefined values before returning
       Object.keys(entity).forEach((key) =>
         (entity[key] == undefined) && delete entity[key]);
-
+      self.valid = !self.form.$invalid;
       self.onChange({entity: entity});
     }, true);
   };
