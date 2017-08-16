@@ -6,5 +6,5 @@ import EntityComponent from './entity-component';
 
 'use strict';
 
-const module = angular.module('bedrock.entity', ['bedrock.form']);
+const module = angular.module('bedrock.entity', ['bedrock.form', 'ngMessages']);
 module.component('brEntity', EntityComponent);
