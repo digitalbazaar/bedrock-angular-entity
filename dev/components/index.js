@@ -5,7 +5,7 @@
 
 import angular from 'angular';
 import * as bedrock from 'bedrock-angular';
-import HomeComponent from './home-component';
+import HomeComponent from './home-component.js';
 
 const module = angular.module('bedrock-angular-entity-dev', [
   'bedrock.entity', 'ngError', 'ngMaterial', 'ngMessages']);

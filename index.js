@@ -2,7 +2,7 @@
  * Copyright (c) 2017 Digital Bazaar, Inc. All rights reserved.
  */
 import angular from 'angular';
-import EntityComponent from './entity-component';
+import EntityComponent from './entity-component.js';
 
 'use strict';
 
