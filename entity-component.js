@@ -5,6 +5,7 @@
 
 export default {
   bindings: {
+    defaults: '<?brDefaults',
     schema: '<brEntitySchema',
     template: '<?brEntityTemplate',
     valid: '=brValid',
@@ -19,7 +20,7 @@ function Ctrl($scope) {
   const self = this;
 
   self.$onInit = () => {
-    self.entity = {};
+    self.entity = self.defaults || {};
 
     if(!self.template) {
       self.template = 'bedrock-angular-entity/single-column-layout.html';
@@ -28,16 +29,16 @@ function Ctrl($scope) {
     // watch entity and fire onChange when it updates w/ a valid change
     $scope.$watch(function() {
       return self.entity;
-    }, function(entity) {
-      if(entity === undefined) {
+    }, entity => {
+      if(entity === undefined || self.form === undefined) {
         return;
       }
 
       // clean undefined values before returning
-      Object.keys(entity).forEach((key) =>
+      Object.keys(entity).forEach(key =>
         (entity[key] == undefined) && delete entity[key]);
       self.valid = !self.form.$invalid;
-      self.onChange({entity: entity});
+      self.onChange({entity});
     }, true);
   };
 }
