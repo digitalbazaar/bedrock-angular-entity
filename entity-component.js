@@ -9,7 +9,8 @@ export default {
     schema: '<brEntitySchema',
     template: '<?brEntityTemplate',
     valid: '=brValid',
-    onChange: '&brOnChange'
+    onChange: '&brOnChange',
+    readOnly: '<?brReadOnly'
   },
   controller: Ctrl,
   templateUrl: 'bedrock-angular-entity/entity-component.html'
@@ -20,6 +21,7 @@ function Ctrl($scope) {
   const self = this;
 
   self.$onInit = () => {
+    self.readOnly = !!self.readOnly;
     self.entity = self.defaults || {};
 
     if(!self.template) {

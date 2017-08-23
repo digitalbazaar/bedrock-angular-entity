@@ -12,6 +12,7 @@
         theme: 'material'
       }"
       br-input-ng-disabled="$ctrl.loading"
+      br-input-ng-readonly="$ctrl.readOnly"
       br-input-autocomplete="off"
       br-input-ng-minlength="attribute.validation.minLength"
       br-input-ng-maxlength="attribute.validation.maxLength"
@@ -44,8 +45,12 @@ characters.
         label: attribute.label,
         showValidation: !!attribute.validation,
         type: 'number',
-        theme: 'material'
-      }" br-input-ng-disabled="$ctrl.loading" br-input-autocomplete="off"
+        theme: 'material',
+        disabled: {{$ctrl.readOnly}}
+      }"
+      br-input-ng-disabled="$ctrl.loading"
+      br-input-ng-readonly="$ctrl.readOnly"
+      br-input-autocomplete="off"
       br-input-ng-min="attribute.validation.minValue"
       br-input-ng-max="attribute.validation.maxValue"
       br-input-ng-required="attribute.validation.required">
@@ -72,7 +77,8 @@ characters.
         key: 'value',
         theme: 'material',
         required: attribute.validation.required,
-        autocomplete: false
+        autocomplete: false,
+        disabled: {{$ctrl.readOnly}}
       }">
       <br-select-help>
 {{attribute.description}}
