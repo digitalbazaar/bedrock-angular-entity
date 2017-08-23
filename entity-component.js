@@ -27,7 +27,7 @@ function Ctrl($scope) {
     }
 
     // watch entity and fire onChange when it updates w/ a valid change
-    $scope.$watch(function() {
+    $scope.$watch(() => {
       return self.entity;
     }, entity => {
       if(entity === undefined || self.form === undefined) {
