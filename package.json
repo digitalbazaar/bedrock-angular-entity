@@ -4,19 +4,13 @@
   "browser": "index.js",
   "dependencies": {
     "angular-messages": "~1.6.5",
-    "bedrock-angular": "^3.0.0",
+    "bedrock-angular": "^4.0.0",
     "bedrock-angular-form": "^3.0.0",
     "bedrock-angular-material": "^1.0.0",
     "ng-error": "^1.0.2"
   },
   "bedrock": {
-    "browserDependencies": [
-      "angular-messages",
-      "bedrock-angular",
-      "bedrock-angular-form",
-      "bedrock-angular-material",
-      "ng-error"
-    ]
+    "browserDependencies": "all"
   },
   "engines": {
     "node": ">=6.9.0"
