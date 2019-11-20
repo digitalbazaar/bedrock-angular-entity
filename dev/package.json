@@ -8,7 +8,7 @@
     "postinstall": "node ./index.js compile-less"
   },
   "dependencies": {
-    "angular": "~1.6.5",
+    "angular": "~1.7.9",
     "angular-animate": "~1.6.5",
     "angular-aria": "~1.6.5",
     "angular-messages": "~1.6.5",
